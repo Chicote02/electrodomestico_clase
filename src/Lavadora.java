@@ -49,7 +49,7 @@ public class Lavadora extends Electrodomestico{
         if (!this.aguaCaliente) {
             return horas * this.potencia;
         } else {
-            return horas * (this.potencia + this.potencia * 0.20);
+            return horas * (this.potencia + this.potencia * 0.2);
         }
     }
 }
