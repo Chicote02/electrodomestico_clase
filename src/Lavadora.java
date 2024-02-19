@@ -1,10 +1,10 @@
 public class Lavadora extends Electrodomestico{
     //Constantes:
-    private final static String TIPO = "Lavadora";
+    protected final static String TIPO = "Lavadora";
 
     //Atributos:
-    private double precio;
-    private boolean aguaCaliente;
+    protected double precio;
+    protected boolean aguaCaliente;
 
     //Constructores:
     public Lavadora(String marca, double potencia) {
@@ -47,13 +47,9 @@ public class Lavadora extends Electrodomestico{
     @Override
     public double getConsumo(int horas) {
         if (!this.aguaCaliente) {
-            return horas * getPotencia();
+            return horas * this.potencia;
+        } else {
+            return horas * (this.potencia + this.potencia * 0.20);
         }
-        return 0;
-    }
-
-    @Override
-    public double getCosteConsumo(int horas, double costeHoras) {
-        return 0;
     }
 }
